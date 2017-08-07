@@ -1,0 +1,13 @@
+# Folder config file
+Desktop.ini
+
+#InteliJ
+.idea
+target
+*.iml
+
+#Eclipse
+.settings
+.project
+build
+.classpath

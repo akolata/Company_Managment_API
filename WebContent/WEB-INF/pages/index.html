@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html	lang="en"
+      	xmlns:th="http://www.thymeleaf.org"
+      	xmlns:layout="http://www.ultraq.net.nz/thymelaf/layout"
+		layout:decorator="/templates/template.html">
+<head>
+	<title>Index Page</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+					<div class="list-group">
+						<a href = "#" class = "list-group-item active">
+					      <h4 class = "list-group-item-heading">
+					         REST API
+					      </h4>
+					   </a>
+					   <a th:href = "@{/api/employee/all}" class = "list-group-item">
+					      <h4 class = "list-group-item-heading">
+					         GET - get all employees
+					      </h4>
+					      <p class = "list-group-item-text">
+					         localhost:8080/api/employee/all
+					      </p>
+   						</a>
+   						<div class = "list-group-item">
+	   						<h4 class = "list-group-item-heading">
+						    	GET - get one employee
+						    </h4>
+						    <p class = "list-group-item-text">
+						    	localhost:8080/api/employee/{id}
+						    </p>
+   						</div>
+   						<div class = "list-group-item">
+	   						<h4 class = "list-group-item-heading">
+						    	POST - add an employee
+						    </h4>
+						    <p class = "list-group-item-text">
+						    	localhost:8080/api/employee/add
+						    </p>
+   						</div>
+   						<div class = "list-group-item">
+	   						<h4 class = "list-group-item-heading">
+						    	POST - add all employees
+						    </h4>
+						    <p class = "list-group-item-text">
+						    	localhost:8080/api/employee/addAll
+						    </p>
+   						</div>      						
+   						<a th:href = "@{/api/department/all}" class = "list-group-item">
+					      <h4 class = "list-group-item-heading">
+					         GET - get all departments
+					      </h4>
+					      <p class = "list-group-item-text">
+					         localhost:8080/api/department/all
+					      </p>
+   						</a>
+   						<div class = "list-group-item">
+					      <h4 class = "list-group-item-heading">
+					         POST - add department
+					      </h4>
+					      <p class = "list-group-item-text">
+					         localhost:8080/api/department/add
+					      </p>
+   						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-lg-offset-3">
+					<a href = "#" class = "list-group-item active">
+						      <h4 class = "list-group-item-heading">
+						         jQuery AJAX examples 
+						      </h4>
+					</a>
+					<a th:href = "@{/employee}" class = "list-group-item">
+					      <h4 class = "list-group-item-heading">
+					         GET - go to Employee page
+					      </h4>
+					      <p class = "list-group-item-text">
+					         localhost:8080//employee
+					      </p>
+   						</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
