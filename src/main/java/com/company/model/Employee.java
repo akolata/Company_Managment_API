@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -70,6 +71,10 @@ implements Serializable{
 	@JoinColumn(name = "computer_id")
 	@JsonIgnore
 	private Computer computer;
+	
+	@Embedded
+	@JsonIgnore
+	private Address address;
 	
 	public Employee(){
 		
@@ -154,6 +159,14 @@ implements Serializable{
 	public void setComputer(Computer computer) {
 		this.computer = computer;
 	}
+	
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
 	@Override
 	public int hashCode() {
@@ -200,7 +213,5 @@ implements Serializable{
 		
 		return sb.toString();
 	}
-
-	
 
 }
