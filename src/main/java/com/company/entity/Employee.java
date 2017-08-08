@@ -1,4 +1,4 @@
-package com.company.model;
+package com.company.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -73,7 +73,8 @@ implements Serializable{
 	@JsonIgnore
 	private Computer computer;
 	
-	@ManyToMany(mappedBy = "employees")
+	@ManyToMany(mappedBy = "employees",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JsonIgnore
 	Set<Project> projects;
 	
 	@Embedded

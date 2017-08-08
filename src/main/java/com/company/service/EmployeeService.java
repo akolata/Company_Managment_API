@@ -3,8 +3,8 @@ package com.company.service;
 import java.util.List;
 
 import com.company.dto.AddEmployeeRequest;
+import com.company.entity.Employee;
 import com.company.dto.AddAllEmployeesRequest;
-import com.company.model.Employee;
 
 public interface EmployeeService {
 	

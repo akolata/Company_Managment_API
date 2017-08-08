@@ -1,4 +1,4 @@
-package com.company.model;
+package com.company.entity;
 
 import java.time.LocalDate;
 import java.util.Set;

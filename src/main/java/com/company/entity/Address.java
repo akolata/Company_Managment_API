@@ -1,4 +1,4 @@
-package com.company.model;
+package com.company.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

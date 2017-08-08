@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.company.entity.Department;
 import com.company.model.CustomAPIError;
-import com.company.model.Department;
 import com.company.repository.DepartmentRepository;
 
 @RestController

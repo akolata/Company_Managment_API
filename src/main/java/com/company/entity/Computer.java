@@ -1,4 +1,4 @@
-package com.company.model;
+package com.company.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -81,7 +81,7 @@ public class Computer {
 
 	@Override
 	public String toString() {
-		return "Computer [id=" + id + ", deviceName=" + deviceName + ", owner=" + owner + "]";
+		return "Computer [id=" + id + ", deviceName=" + deviceName + ", owner id=" + owner.getId() + "]";
 	}
 	
 }
