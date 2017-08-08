@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -71,6 +72,9 @@ implements Serializable{
 	@JoinColumn(name = "computer_id")
 	@JsonIgnore
 	private Computer computer;
+	
+	@ManyToMany(mappedBy = "employees")
+	Set<Project> projects;
 	
 	@Embedded
 	@JsonIgnore
@@ -166,6 +170,14 @@ implements Serializable{
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public Set<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(Set<Project> projects) {
+		this.projects = projects;
 	}
 
 	@Override
