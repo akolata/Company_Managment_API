@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.company.dto.AddEmployeeRequest;
+import com.company.entity.Employee;
 import com.company.dto.AddAllEmployeesRequest;
 import com.company.model.CustomAPIError;
-import com.company.model.Employee;
 import com.company.repository.EmployeeRepository;
 import com.company.service.EmployeeService;
 

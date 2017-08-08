@@ -1,4 +1,4 @@
-package com.company.model.converter;
+package com.company.entity.converter;
 
 import java.time.LocalDate;
 import java.sql.Date;

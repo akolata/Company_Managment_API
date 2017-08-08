@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.company.dto.AddAllEmployeesRequest;
 import com.company.dto.AddEmployeeRequest;
-import com.company.model.Employee;
+import com.company.entity.Employee;
 import com.company.repository.DepartmentRepository;
 import com.company.repository.EmployeeRepository;
 import com.company.service.EmployeeService;
