@@ -2,6 +2,7 @@ package com.company.config;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +12,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.spring4.SpringTemplateEngine;
@@ -20,6 +22,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresolver.UrlTemplateResolver;
 
+import com.company.interceptor.CompanyLoggingInterceptor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import nz.net.ultraq.thymeleaf.LayoutDialect;
@@ -33,6 +36,9 @@ extends WebMvcConfigurerAdapter{
 	
 	public static final String 	PREFIX = "/WEB-INF/pages/",
 								SUFFIX = ".html";
+	
+	@Autowired
+	CompanyLoggingInterceptor companyLoggingInterceptor;
 
 	@Bean
     public ITemplateResolver templateResolver() {
@@ -82,6 +88,11 @@ extends WebMvcConfigurerAdapter{
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/");
 		super.addResourceHandlers(registry);
+	}
+	
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(companyLoggingInterceptor).excludePathPatterns("/api/**");
 	}
     
 }
